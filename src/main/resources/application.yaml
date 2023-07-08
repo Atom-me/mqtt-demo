@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  mqtt:
+    uris: [tcp://192.168.88.201:1883]
+    username: admin
+    password: P3sXgZfl9XgG
+    clientId: data-producer-${random.int(100)}
+    serverId: data-subscriber-${random.int(100)}
+    defaultTopic: yyy
+    dataTopics: [device/#,pay/#]
+    lastWillTopic: "client/status"
+    lastWillQos: 2
+    lastWillMessage: "unexpected exit"
+    lastWillRetain: false
+    completionTimeout: 10000
